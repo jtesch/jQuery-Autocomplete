@@ -496,6 +496,11 @@
         },
 
         getQuery: function (value) {
+            var pattern = this.options.match;
+            if (pattern){
+                return $.trim(value.match(pattern)[0]);
+            }
+
             var delimiter = this.options.delimiter,
                 parts;
 
